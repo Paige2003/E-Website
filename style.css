@@ -24,6 +24,14 @@ body{
     overflow-x: hidden;
 }
 
+.no-cursor{
+    cursor: no-drop;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
 /* NAV */
 
 nav{
@@ -74,6 +82,68 @@ li{
     border: #7342dc 2px solid;
     border-radius: 4px;   
 }
+
+.button__menu{
+    background-color: transparent;
+    font-size: 40px;
+    text-align: center;
+    border: none;
+    color: #7342d6;
+    display: none;
+}
+
+.menu__backdrop{
+    position: absolute;
+    background-color: #242424;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menu--open .menu__backdrop{
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+
+}
+
+.menu--open{
+    max-height: 100vh;
+    overflow-y: hidden;
+}
+
+.menu__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu__list{
+    padding: 32px 0px;
+}
+
+.menu__link{
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+}
+
+.button__menu--close{
+    position: absolute;
+    right: 20px;
+    padding: 16px;
+    color: white;   
+}
+
+/* LANDING */
 
 #landing{
     background-color: rgba(115, 66, 214, 0.1);
@@ -271,4 +341,104 @@ button:active{
     text-decoration: line-through;
     padding-right: 6px;
     color: gray;
+}
+
+.books__recent{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* BROWSE */
+
+#browse{
+    background-color: rgba(115, 66, 214, 0.1);
+}
+
+.browse__button--wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.browse__button{
+    background-color: #7342dc;  
+    color: white;
+    padding: 12px 24px;
+    font-size: 26px;
+    border-radius: 5px;
+    border: none;
+}
+
+/* FOOTER */
+
+#footer{
+    background-color: rgb(46, 45, 45);
+}
+
+.footer__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__logo{
+    margin: 32px 0 24px 0;
+    filter: grayscale(1) invert(1);
+}
+
+.footer__links{
+    padding-bottom: 16px;
+}
+
+.footer__link{
+    margin: 0px 24px 24px 24px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 16px;
+}
+
+.footer__para{
+    color: white;
+    margin: 16px 0px 24px 0px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+@media(max-width:768px){
+    .header__des{
+        padding: 0 24px;
+    }
+
+    h1{
+        font-size: 40px;
+    }
+
+    h2{
+        font-size: 26px;
+    }
+
+    button{
+        font-size: 18px;
+    }
+
+    .book{
+        width: 50%;
+    }
+}
+
+@media (max-width: 550px){
+    .nav__links{
+        display: none;
+    }
+
+    .button__menu{
+        display: block;
+    }
 }
